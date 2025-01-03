@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
 
 //        val dateTime = getCurrentDateTime()
 //        notesViewModel.insertNotes(Notes(1, "Title 2", "Description 1", dateTime))
-        binding.lifecycleOwner = this
         notesViewModel.allNotes.observe(this, Observer { notes ->
             notes?.let {
                 binding.notesAdapter = NotesAdapter(this, it) { id ->

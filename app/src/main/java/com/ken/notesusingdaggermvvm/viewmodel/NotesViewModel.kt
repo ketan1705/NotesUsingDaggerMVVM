@@ -1,5 +1,6 @@
 package com.ken.notesusingdaggermvvm.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,7 +20,11 @@ class NotesViewModel @Inject constructor(val repository: NotesRepository) : View
 
     fun insertNotes(notes: Notes) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.insertNote(notes)
+            try {
+                repository.insertNote(notes)
+            } catch (e: Exception) {
+                Log.e("NotesViewModel", "Exception: $e")
+            }
         }
     }
 

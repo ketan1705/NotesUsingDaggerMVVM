@@ -45,7 +45,6 @@ class AddNoteActivity : AppCompatActivity() {
             binding.notes = it
         })
 
-        binding.lifecycleOwner = this
         binding.saveBtn.setOnClickListener {
             val dateTime = getCurrentDateTime()
             viewModel.insertNotes(
