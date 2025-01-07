@@ -35,11 +35,11 @@ class NotesViewModel @Inject constructor(val repository: NotesRepository) : View
         }
     }
 
-    fun getAllNotes() {
-        viewModelScope.launch {
-            repository.getAllNotes()
-        }
-    }
+//    fun getAllNotes() {
+//        viewModelScope.launch {
+//            repository.getAllNotes()
+//        }
+//    }
 
     fun deleteNotes(id: Int) {
         viewModelScope.launch {
